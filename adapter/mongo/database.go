@@ -26,7 +26,9 @@ package mongo
 
 import (
 	"context"
+	"crypto/tls"
 	"database/sql"
+	"net"
 	"strings"
 	"sync"
 	"time"
@@ -154,7 +156,20 @@ func (s *Source) Driver() interface{} {
 func (s *Source) open() error {
 	var err error
 
-	if s.session, err = mgo.DialWithTimeout(s.connURL.String(), connTimeout); err != nil {
+	tlsConfig := &tls.Config{}
+
+	info, err := mgo.ParseURL(s.connURL.String())
+	if err != nil {
+		return err
+	}
+
+	info.DialServer = func(addr *mgo.ServerAddr) (net.Conn, error) {
+		conn, err := tls.Dial("tcp", addr.String(), tlsConfig)
+		return conn, err
+	}
+	info.Timeout = connTimeout
+
+	if s.session, err = mgo.DialWithInfo(info); err != nil {
 		return err
 	}
 
