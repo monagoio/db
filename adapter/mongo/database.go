@@ -33,8 +33,8 @@ import (
 	"sync"
 	"time"
 
+	mgo "github.com/globalsign/mgo"
 	db "github.com/upper/db/v4"
-	mgo "gopkg.in/mgo.v2"
 )
 
 // Adapter holds the name of the mongodb adapter.

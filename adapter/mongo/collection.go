@@ -28,9 +28,9 @@ import (
 
 	"reflect"
 
+	mgo "github.com/globalsign/mgo"
 	db "github.com/upper/db/v4"
 	"github.com/upper/db/v4/internal/adapter"
-	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
 

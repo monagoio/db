@@ -31,8 +31,8 @@ import (
 
 	"encoding/json"
 
+	mgo "github.com/globalsign/mgo"
 	db "github.com/upper/db/v4"
-	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 
 	"github.com/upper/db/v4/internal/immutable"

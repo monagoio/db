@@ -25,7 +25,7 @@ import (
 	"fmt"
 	"os"
 
-	mgo "gopkg.in/mgo.v2"
+	mgo "github.com/globalsign/mgo"
 
 	db "github.com/upper/db/v4"
 	"github.com/upper/db/v4/internal/testsuite"
