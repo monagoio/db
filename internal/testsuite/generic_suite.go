@@ -25,9 +25,9 @@ import (
 	"database/sql/driver"
 	"time"
 
+	"github.com/globalsign/mgo/bson"
 	"github.com/stretchr/testify/suite"
 	db "github.com/upper/db/v4"
-	"gopkg.in/mgo.v2/bson"
 )
 
 type birthday struct {

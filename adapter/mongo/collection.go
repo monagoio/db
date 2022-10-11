@@ -29,9 +29,9 @@ import (
 	"reflect"
 
 	mgo "github.com/globalsign/mgo"
+	"github.com/globalsign/mgo/bson"
 	db "github.com/upper/db/v4"
 	"github.com/upper/db/v4/internal/adapter"
-	"gopkg.in/mgo.v2/bson"
 )
 
 // Collection represents a mongodb collection.

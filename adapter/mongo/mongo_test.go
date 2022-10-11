@@ -30,10 +30,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/globalsign/mgo/bson"
 	"github.com/stretchr/testify/suite"
 	db "github.com/upper/db/v4"
 	"github.com/upper/db/v4/internal/testsuite"
-	"gopkg.in/mgo.v2/bson"
 )
 
 type artistType struct {
